@@ -1,0 +1,60 @@
+# Global Configuration for Task Manager Application
+# Enables GPT-5 mini for all clients
+
+application:
+  name: "Task Manager"
+  version: "1.0.0"
+  environment: "production"
+
+# AI Model Configuration - GPT-5 mini enabled for all clients
+ai_model:
+  enabled: true
+  provider: "openai"
+  model: "gpt-5-mini"
+  # Enable for all clients globally
+  scope: "global"
+  all_clients_enabled: true
+  
+  # Model settings
+  settings:
+    temperature: 0.7
+    max_tokens: 2048
+    timeout_seconds: 30
+    retry_attempts: 3
+    retry_delay_seconds: 1
+
+# Storage Configuration
+storage:
+  type: "json_file"
+  default_file: "tasks.json"
+  auto_sync: true
+  atomic_writes: true
+
+# API Configuration
+api:
+  host: "0.0.0.0"
+  port: 8000
+  debug: false
+  cors_enabled: true
+
+# Logging Configuration
+logging:
+  level: "INFO"
+  format: "json"
+  file: "app.log"
+  max_size_mb: 10
+  backup_count: 5
+
+# Features
+features:
+  task_persistence: true
+  ai_suggestions: true
+  batch_operations: true
+  webhooks: false
+
+# Client Access Control
+clients:
+  gpt5_mini_access:
+    enabled: true
+    all_clients: true  # Enable for all clients
+    excluded_clients: []  # No exclusions

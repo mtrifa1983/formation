@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display Squares</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .output { background-color: #f0f0f0; padding: 15px; border-radius: 5px; white-space: pre-wrap; }
+        h2 { color: #333; }
+    </style>
+</head>
+<body>
+    <h1>Loop through [1, 2, 3, 4, 5] and Display Squares</h1>
+    
+    <h2>Output:</h2>
+    <div class="output" id="output"></div>
+
+    <script>
+        /**
+         * Loop through a list and display the square of each element
+         * @param {number[]} nums - Array of numbers
+         */
+        function displaySquares(nums) {
+            let result = "Squares of [1, 2, 3, 4, 5]:\n";
+            result += "================================\n";
+            
+            // Loop through each element in the array
+            for (let num of nums) {
+                // Calculate the square of the current number (num * num)
+                let square = num * num;
+                // Add the number and its square to the result
+                result += num + "² = " + square + "\n";
+            }
+            
+            return result;
+        }
+
+        /**
+         * Alternative using map() to create an array of squares
+         * @param {number[]} nums - Array of numbers
+         * @returns {number[]} Array of squared values
+         */
+        function getSquares(nums) {
+            // Use map() to transform each element by multiplying it by itself
+            return nums.map(num => num * num);
+        }
+
+        // Execute the functions
+        const list = [1, 2, 3, 4, 5];
+        
+        // Display each square
+        let output = displaySquares(list);
+        
+        // Get the array of squares
+        const squares = getSquares(list);
+        output += "\n================================\n";
+        output += "Array of squares: [" + squares.join(", ") + "]";
+        
+        // Display the results
+        document.getElementById("output").textContent = output;
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+# Global
+*.log
+.env
+.env.*
+.DS_Store
+
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+*.egg-info/
+
+# Project-specific - Task Manager
+tp2_task_manager/.env.gpt5
+tp2_task_manager/tasks.json
+
+# Java / Maven
+target/
+*.class
+*.jar
+*.war
+
+# IDEs
+.idea/
+.vscode/
+*.iml
+
+# Node
+node_modules/
